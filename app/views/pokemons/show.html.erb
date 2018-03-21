@@ -1,0 +1,21 @@
+<%= form_for @pokemon , url: {action: "create"} do |e| %>
+    <%= e.label "name"%>
+    <%= e.text_field :name%>
+
+
+
+    <%= f.collection_radio_buttons(
+    		:ndex, (1..649).map {|ndex| [ndex, ndex]}, :first, :last
+  		) do |b| %>
+  		<div class="pokemon-choice-container">
+    		<%= b.label { image_tag("pokemon/#{b.text}.png") + b.radio_button } %>
+  		</div>
+	<% end %>
+
+
+    <%= e.label "index"%>
+    <%= e.text_field :index%>
+    <%= e.submit %>
+<% end %>
+
+<%= f.button :submit, class: "create-pokemon-btn" %>
