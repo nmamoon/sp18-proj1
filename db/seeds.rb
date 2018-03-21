@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Make Pokemon
-[['Squirtle', 7], ['Charmander', 4], ['Bulbasaur', 1], ['Pikachu', 25]].each do |name, ndex|
+[['Squirtle', 7], ['Charmander', 4], ['Bulbasaur', 1], ['Pikachu', 25]].each do |name, index|
   Pokemon.create(
     name: name,
-    level: rand(1..20),
-    ndex: ndex,
+    level: rand(1..20), health: 100
+    index: index
   )
 end
 
